@@ -9,6 +9,25 @@ const finalMessage = "Hết lời chúc rồi nè 😳 Nhưng tớ vẫn luôn m
 
 let opened = false;
 
+// Manual play button handler
+function startBackgroundMusic() {
+  const bg = document.getElementById('backgroundMusic');
+  if (!bg) return;
+  bg.muted = false; // in case we switch to muted autoplay later
+  bg.play().catch(() => {});
+  const btn = document.getElementById('playMusicBtn');
+  if (btn) btn.style.display = 'none';
+}
+
+// Hide button if music already allowed (e.g., user previously clicked)
+window.addEventListener('DOMContentLoaded', () => {
+  const bg = document.getElementById('backgroundMusic');
+  const btn = document.getElementById('playMusicBtn');
+  if (bg && btn && !bg.paused) {
+    btn.style.display = 'none';
+  }
+});
+
 // Try to auto-play background music. Some browsers block autoplay with sound,
 // so we attempt to play on load and, if that fails, wait for the first user
 // interaction (a click or touch) to start the music so the first track can be
@@ -76,7 +95,7 @@ function showMore() {
   setTimeout(() => {
     const p = document.createElement("p");
     p.textContent = finalMessage;
-    p.style.fontWeight = "bold";
+    p.classList.add('final-msg');
     messageBox.appendChild(p);
     // Cuộn xuống tới cuối lời chúc
     messageBox.scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -59,6 +59,27 @@ html {
   transition: transform 0.5s ease;
 }
 
+.music-btn {
+  margin-top: 10px;
+  padding: 8px 20px;
+  background: linear-gradient(45deg, #ffdfeb 0%, #ffc4e1 100%);
+  color: #c2185b;
+  border: none;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Comic Sans MS', 'Patrick Hand', cursive;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(255, 105, 180, 0.3);
+  transition: transform 0.2s;
+}
+
+
+.music-btn:hover {
+  transform: translateY(-2px);
+}
+
+
 .open-btn {
   margin-top: 12px;
   padding: 12px 26px;
@@ -90,6 +111,30 @@ html {
 #extraMessage p {
   margin: 12px 0;
   animation: fadeIn 0.8s ease;
+  color: #e91e63;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+}
+
+/* Pastel rainbow for từng lời chúc */
+.final-msg {
+  color: #d5006c !important;
+  font-size: 20px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+  animation: pulse 1.2s ease infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.04); }
+}
+
+/* Pastel rainbow for từng lời chúc */
+#extraMessage p:nth-child(odd) {
+  color: #ff5fa9;
+}
+#extraMessage p:nth-child(even) {
+  color: #ff94c2;
 }
 
 .hidden {
