@@ -1,5 +1,5 @@
 const messages = [
-   "Mỗi lần cậu mệt mỏi, hãy nhớ rằng ở đâu đó có một người luôn âm thầm vũ cậu nè 💌💕",
+   "Mỗi lần cậu mệt mỏi, hãy nhớ rằng ở đâu đó có một người luôn âm thầm cồ vũ cậu nè 💌💕",
   "Thi cử chỉ là chuyện nhỏ xíu thôi, vì tớ tin trái tim ấm áp của một bác sĩ tương lai sẽ vượt qua tất cả 🩺🌟",
   "Tớ luôn ngưỡng mộ sự cố gắng của cậu… nên cậu nhất định sẽ làm được, vì cậu là ánh sáng trong lòng tớ và  là người tớ luôn ngưỡng mộ 🥺✨💖",
   "‘Dr. tương lai’, Cậu đã nỗ lực rất nhiều rồi, giờ chỉ cần tự tin bước tiếp thôi nha ✨👩‍⚕️💖",
