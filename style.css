@@ -1,0 +1,183 @@
+body {
+  background-color: #fff0f5;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  padding: 40px;
+  overflow-x: hidden;
+}
+
+.container {
+  background: linear-gradient(135deg, #ffe6f0 0%, #fff5fb 100%);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.35);
+  max-width: 520px;
+  margin: auto;
+}
+
+h1 {
+  color: #ff69b4;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.message {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.cute-gif {
+  width: 200px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.gift-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  animation: popIn 0.8s ease;
+}
+
+.gift-icon {
+  width: 110px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+  animation: giftBounce 2s infinite;
+}
+
+.gift-icon.opened {
+  transform: rotate(20deg) translateY(-5px) scale(1);
+  animation: none;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+  transition: transform 0.5s ease;
+}
+
+.open-btn {
+  margin-top: 12px;
+  padding: 12px 26px;
+  background: linear-gradient(45deg, #ff85c1 0%, #ff4f9d 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Comic Sans MS', 'Patrick Hand', cursive;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.4);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.open-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255, 105, 180, 0.5);
+}
+
+#extraMessage {
+  font-size: 18px;
+  color: #d63384;
+  transition: opacity 0.5s;
+}
+
+#extraMessage p {
+  margin: 12px 0;
+  animation: fadeIn 0.8s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes giftBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Trái tim & điểm 10 bay */
+#heart-container,
+#score-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.heart,
+.score {
+  position: absolute;
+  font-size: 24px;
+  animation: fly 2.5s linear forwards;
+}
+
+@keyframes fly {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-150px) scale(1.5);
+  }
+}
+
+/* ------------ Responsive ------------- */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  .container {
+    padding: 20px;
+    max-width: 90%;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  .message,
+  #extraMessage {
+    font-size: 16px;
+  }
+  .cute-gif {
+    width: 150px;
+  }
+  .gift-icon {
+    width: 80px;
+  }
+  .open-btn {
+    padding: 10px 22px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 700px;
+  }
+}
